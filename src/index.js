@@ -1,6 +1,11 @@
-import { Server } from 'proxy-chain';
+export default {
+  async fetch(request) {
+    const url = new URL(request.url).searchParams.get("url")
 
-const server = new Server({ port: 8000 });
+    const res = await fetch(url)
 
-await server.listen();
-console.log(`Proxy server is listening on port ${server.port}`);
+    return new Response(res.body, {
+      headers: res.headers
+    })
+  }
+}
