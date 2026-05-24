@@ -1,1 +1,6 @@
-
+{
+  "name": "worker",
+  "scripts": {
+    "deploy": "wrangler deploy"
+  }
+}
