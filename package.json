@@ -2,5 +2,8 @@
   "name": "worker",
   "scripts": {
     "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "axios": "^1.6.0"
   }
 }
