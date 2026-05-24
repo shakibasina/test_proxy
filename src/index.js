@@ -1,9 +1,6 @@
-import axios from "axios";
+import { Server } from 'proxy-chain';
 
-export default {
-  async fetch() {
-    const res = await axios.get("https://httpbin.org/get");
+const server = new Server({ port: 8000 });
 
-    return new Response(JSON.stringify(res.data));
-  }
-}
+await server.listen();
+console.log(`Proxy server is listening on port ${server.port}`);
